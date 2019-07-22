@@ -8,8 +8,8 @@ mv -iv ~/.gitconfig ~/.gitconfig.old
 mv -iv ~/.vimrc ~/.vimrc.old
 
 echo -e "\u001b[36;1mAdding symlinks...\u001b[0m"
-ln -sfnv $CWD/dotfiles/.bashrc ~/.bashrc
-ln -sfnv $CWD/dotfiles/.alias ~/.alias
-ln -sfnv $CWD/dotfiles/.tmux.conf ~/.tmux.conf
-ln -sfnv $CWD/dotfiles/.gitconfig ~/.gitconfig
-ln -sfnv $CWD/dotfiles/.vimrc ~/.vimrc
+ln -sfnv $PWD/dotfiles/.bashrc ~/.bashrc
+ln -sfnv $PWD/dotfiles/.alias ~/.alias
+ln -sfnv $PWD/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sfnv $PWD/dotfiles/.gitconfig ~/.gitconfig
+ln -sfnv $PWD/dotfiles/.vimrc ~/.vimrc
