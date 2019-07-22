@@ -2,11 +2,23 @@
 
 # Install dependencies
 echo -e "\u001b[36;1mInstalling ripgrep...\u001b[0m"
-curl -sL 'https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb' -o /tmp/ripgrep.deb
-sudo dpkg -i /tmp/ripgrep.deb
-sudo apt-get install -f
+if command -v dpkg >/dev/null 2>&1 && command -v apt-get >/dev/null 2>&1; then
+    curl -sL 'https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb' -o /tmp/ripgrep.deb
+    sudo dpkg -i /tmp/ripgrep.deb
+    sudo apt-get install -f
+elif command -v yum >/dev/null 2>&1; then
+    if ! command -v yum-config-manager >/dev/null 2>&1; then
+        sudo yum install -y yum-utils 
+    fi
+    sudo yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
+    sudo yum install -y ripgrep
+else
+    echo -e "\u001b[33;1m Cannot install ripgrep\u001b[0m"
+fi
+
 
 echo -e "\u001b[36;1mInstalling fzf...\u001b[0m"
+sudo rm -rf /usr/local/opt/fzf
 sudo mkdir -p /usr/local/opt/
 sudo git clone --depth 1 https://github.com/junegunn/fzf.git /usr/local/opt/fzf
 sudo chown -R $USER:$USER /usr/local/opt/fzf
@@ -33,5 +45,4 @@ ln -sfnv $PARENT_DIR/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sfnv $PARENT_DIR/dotfiles/.gitconfig ~/.gitconfig
 ln -sfnv $PARENT_DIR/dotfiles/.vimrc ~/.vimrc
 
-echo -e "\u001b[36;1mReloading .bashrc...\u001b[0m"
-exec bash
+echo -e "\u001b[36;1mPlease execute 'source $HOME/.bashrc' for changes to take effect.\u001b[0m"
