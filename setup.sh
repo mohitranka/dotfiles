@@ -34,4 +34,4 @@ ln -sfnv $PARENT_DIR/dotfiles/.gitconfig ~/.gitconfig
 ln -sfnv $PARENT_DIR/dotfiles/.vimrc ~/.vimrc
 
 echo -e "\u001b[36;1mReloading .bashrc...\u001b[0m"
-source ~/.bashrc
+exec bash
