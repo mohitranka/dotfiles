@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 echo -e "\u001b[33;1mBacking up old files...\u001b[0m";
-mv -iv ~/.bashrc ~/.bashrc.old
-mv -iv ~/.alias ~/.alias.old
-mv -iv ~/.tmux.conf ~/.tmux.conf.old
-mv -iv ~/.gitconfig ~/.gitconfig.old
-mv -iv ~/.vimrc ~/.vimrc.old
+mv -fv ~/.bashrc ~/.bashrc.old
+mv -fv ~/.alias ~/.alias.old
+mv -fv ~/.tmux.conf ~/.tmux.conf.old
+mv -fv ~/.gitconfig ~/.gitconfig.old
+mv -fv ~/.vimrc ~/.vimrc.old
 
 echo -e "\u001b[36;1mAdding symlinks...\u001b[0m"
 ln -sfnv $PWD/dotfiles/.bashrc ~/.bashrc
