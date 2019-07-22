@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Mohit Ranka
+	email = mohitranka@gmail.com
+[alias]
+	hist = log --graph --color=always --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s' --all
+	co = checkout
+	branches = for-each-ref --sort=-committerdate refs/heads/
+[color]
+    ui = auto
+[push]
+    default = upstream
+[fetch]
+    prune = yes

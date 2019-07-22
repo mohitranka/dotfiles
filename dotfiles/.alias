@@ -1,0 +1,5 @@
+# General .alias file
+#
+alias vi=vim
+alias grep='grep --color'
+alias ag='echo -e "Using rg\n"; rg'
