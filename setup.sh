@@ -1,5 +1,24 @@
 #!/usr/bin/env bash
 
+# Install dependencies
+echo -e "\u001b[36;1mInstalling ripgrep...\u001b[0m"
+curl -sL 'https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb' -o /tmp/ripgrep.deb
+sudo dpkg -i /tmp/ripgrep.deb
+sudo apt-get install -f
+
+echo -e "\u001b[36;1mInstalling fzf...\u001b[0m"
+sudo mkdir -p /usr/local/opt/
+sudo git clone --depth 1 https://github.com/junegunn/fzf.git /usr/local/opt/fzf
+sudo chown -R $USER:$USER /usr/local/opt/fzf
+/usr/local/opt/fzf/install --all --no-zsh --no-fish
+
+echo -e "\u001b[36;1mInstalling z.sh...\u001b[0m"
+sudo curl -sL https://raw.githubusercontent.com/rupa/z/master/z.sh -o /usr/local/bin/z.sh
+sudo chown $USER:$USER /usr/local/bin/z.sh
+chmod a+x /usr/local/bin/z.sh
+
+PARENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 echo -e "\u001b[33;1mBacking up old files...\u001b[0m";
 mv -fv ~/.bashrc ~/.bashrc.old
 mv -fv ~/.alias ~/.alias.old
@@ -8,8 +27,11 @@ mv -fv ~/.gitconfig ~/.gitconfig.old
 mv -fv ~/.vimrc ~/.vimrc.old
 
 echo -e "\u001b[36;1mAdding symlinks...\u001b[0m"
-ln -sfnv $PWD/dotfiles/.bashrc ~/.bashrc
-ln -sfnv $PWD/dotfiles/.alias ~/.alias
-ln -sfnv $PWD/dotfiles/.tmux.conf ~/.tmux.conf
-ln -sfnv $PWD/dotfiles/.gitconfig ~/.gitconfig
-ln -sfnv $PWD/dotfiles/.vimrc ~/.vimrc
+ln -sfnv $PARENT_DIR/dotfiles/.bashrc ~/.bashrc
+ln -sfnv $PARENT_DIR/dotfiles/.alias ~/.alias
+ln -sfnv $PARENT_DIR/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sfnv $PARENT_DIR/dotfiles/.gitconfig ~/.gitconfig
+ln -sfnv $PARENT_DIR/dotfiles/.vimrc ~/.vimrc
+
+echo -e "\u001b[36;1mReloading .bashrc...\u001b[0m"
+source ~/.bashrc
