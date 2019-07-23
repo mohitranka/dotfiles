@@ -32,7 +32,10 @@ if [ -f '/Users/mohit/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/User
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mohit/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/mohit/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if command -v fzf >/dev/null 2>&1; then
+
+    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+fi
 
 
 if command -v brew >/dev/null 2>&1; then
