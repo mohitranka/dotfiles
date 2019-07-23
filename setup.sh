@@ -34,6 +34,8 @@ if ! command -v fzf >/dev/null 2>&1; then
         sudo chown -R $USER:`id -gn` /usr/local/opt/fzf
     fi
     /usr/local/opt/fzf/install --all --no-zsh --no-fish
+    sudo cp /usr/local/opt/fzf/bin/fzf* /usr/local/bin/
+    sudo chown $USER:`id -gn` /usr/local/bin/fzf*
 else
     echo -e "\u001b[36;1mfzf is already install\u001b[0m"
 fi
