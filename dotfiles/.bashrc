@@ -25,10 +25,17 @@ export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/bin/z.sh" ]] && . "/usr/local/bin/z.sh" 
 
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/mohit/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/mohit/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mohit/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/mohit/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+if command -v brew >/dev/null 2>&1; then
+	# Load rupa's z if installed
+	[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
+fi
