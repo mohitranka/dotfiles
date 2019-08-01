@@ -3,3 +3,5 @@
 alias vi=vim
 alias grep='grep --color'
 alias ag='echo -e "Using rg\n"; rg'
+alias gf='gofmt -l -s -w .'
+alias gb='go build ./... && go build'
