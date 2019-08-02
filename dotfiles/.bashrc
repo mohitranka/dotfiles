@@ -9,14 +9,13 @@ fi
 if [ -f ~/.alias ]; then
 . ~/.alias
 fi
-
 export EDITOR=vim
 # User specific aliases and functions
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+PROMPT_COMMAND='PS1_PATH=$(sed "s:\([^/\.]\)[^/]*/:\1/:g" <<< ${PWD/#$HOME/\~})'
+export PS1="\u@\h:\[\e[0;32m \$PS1_PATH\$(parse_git_branch)\e[m $ "
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
