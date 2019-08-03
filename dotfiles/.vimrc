@@ -21,14 +21,15 @@ set clipboard^=unnamed,unnamedplus
 set history=1000 undolevels=1000
 set ruler
 set noerrorbells
+
 if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 set rtp+=/usr/local/opt/fzf
 
-nmap <LEADER>l :set list!<CR>
-nmap <silent> <LEADER>/ :nohlsearch<CR>
+nmap <leader>l ;set list!<CR>
+nmap <silent> <leader>/ ;nohlsearch<CR>
 
 nno : ;
 nno ; :
@@ -60,16 +61,12 @@ inoremap ff <c-o>:w<cr><ESC>`^
 nnoremap ff <c-o>:w<cr>
 
 "Write and quit
-inoremap fq <c-o>:wq<cr><ESC>`^
-nnoremap fq <c-o>:wq<cr>
+inoremap fg <c-o>:wq<cr><ESC>`^
+nnoremap fg <c-o>:wq<cr>
 
 "quit and ask
-inoremap qq <c-o>:qa<cr><ESC>`^
-nnoremap qq <c-o>:qa<cr>
-
-"quit & discard
-inoremap q1 <c-o>:q!<cr><ESC>`^
-nnoremap q1 <c-o>:q!<cr>
+inoremap gg <c-o>:qa<cr><ESC>`^
+nnoremap gg <c-o>:qa<cr>
 
 " Ctrl-j/k inserts blank line below/above.
 nnoremap <silent><C-j> o <ESC>`^
