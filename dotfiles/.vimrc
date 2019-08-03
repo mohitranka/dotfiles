@@ -56,12 +56,12 @@ inoremap <ESC> <NOP>
 inoremap jj <ESC>`^ " Come back to the normal mode
 
 "Write
-inoremap ss <c-o>:w<cr><ESC>`^
-nnoremap ss <c-o>:w<cr>
+inoremap ff <c-o>:w<cr><ESC>`^
+nnoremap ff <c-o>:w<cr>
 
 "Write and quit
-inoremap sq <c-o>:wq<cr><ESC>`^
-nnoremap sq <c-o>:wq<cr>
+inoremap fq <c-o>:wq<cr><ESC>`^
+nnoremap fq <c-o>:wq<cr>
 
 "quit and ask
 inoremap qq <c-o>:qa<cr><ESC>`^
