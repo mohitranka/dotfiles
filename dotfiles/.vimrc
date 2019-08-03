@@ -30,17 +30,50 @@ set rtp+=/usr/local/opt/fzf
 nmap <LEADER>l :set list!<CR>
 nmap <silent> <LEADER>/ :nohlsearch<CR>
 
-nnoremap ; :
-nnoremap i :nohlsearch<CR>i
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+nno : ;
+nno ; :
+vno : ;
+vno ; :
 
-inoremap <ESC> <NOP>
-inoremap jj <ESC>`^
+" Make sure the arrow keys behave properly
+" in insert mode.
 
 inoremap <Esc>A <up>
 inoremap <Esc>B <down>
 inoremap <Esc>C <right>
 inoremap <Esc>D <left>
+
+" disable arrow keys in normal mode
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" Disable Esc key in insert mode
+inoremap <ESC> <NOP>
+" `jj` is used as Esc key in insert mode 
+inoremap jj <ESC>`^ " Come back to the normal mode
+
+"Write
+inoremap ss <c-o>:w<cr><ESC>`^
+nnoremap ss <c-o>:w<cr>
+
+"Write and quit
+inoremap sq <c-o>:wq<cr><ESC>`^
+nnoremap sq <c-o>:wq<cr>
+
+"quit and ask
+inoremap qq <c-o>:qa<cr><ESC>`^
+nnoremap qq <c-o>:qa<cr>
+
+"quit & discard
+inoremap q1 <c-o>:q!<cr><ESC>`^
+nnoremap q1 <c-o>:q!<cr>
+
+" Ctrl-j/k inserts blank line below/above.
+nnoremap <silent><C-j> o <ESC>`^
+nnoremap <silent><C-k> O <ESC>`^
+
+" Save as sudo
+cmap w!! w !sudo tee > /dev/null %

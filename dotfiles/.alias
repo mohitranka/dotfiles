@@ -1,7 +1,12 @@
 # General .alias file
 #
+alias ls='ls -FG'
 alias vi=vim
 alias grep='grep --color'
 alias ag='echo -e "Using rg\n"; rg'
 alias gf='gofmt -l -s -w .'
 alias gb='go build ./... && go build'
+alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+alias ssh='if [ "$(ssh-add -l)" = "The agent has no identities." ]; then ssh-add; fi; /usr/bin/ssh "$@"'
+alias reload='source $HOME/.bashrc'
+alias brc='vim ~/.bashrc'

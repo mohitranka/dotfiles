@@ -1,5 +1,8 @@
 # .bashrc
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 . /etc/bashrc
@@ -43,3 +46,55 @@ if command -v brew >/dev/null 2>&1; then
 fi
 
 export LC_ALL=en_US.UTF-8
+
+
+# color man page
+
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+
+# History information
+
+export HISTFILESIZE=20000
+export HISTSIZE=10000
+shopt -s histappend
+# Combine multiline commands into one in history
+shopt -s cmdhist
+# Ignore duplicates, ls without options and builtin commands
+HISTCONTROL=ignoredups
+export HISTIGNORE="&:ls:[bf]g:exit"
+
+## Extract any archieve
+
+extract() {
+    if [ -z ${1} ] || [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+        echo "Usage: extract <archive> [directory]"
+        echo "Example: extract presentation.zip."
+        echo "Valid archive types are:"
+        echo "tar.bz2, tar.gz, tar.xz, tar, bz2, gz, tbz2,"
+        echo "tbz, tgz, lzo, rar, zip, 7z, xz, txz, lzma and tlz"
+    else
+        case "$1" in
+            *.tar.bz2|*.tbz2|*.tbz)         tar xvjf "$1" ;;
+            *.tgz)                          tar zxvf "$1" ;;
+            *.tar.gz)                       tar xvzf "$1" ;;
+            *.tar.xz)                       tar xvJf "$1" ;;
+            *.tar)                          tar xvf "$1" ;;
+            *.rar)                          7z x "$1" ;;
+            *.zip)                          unzip "$1" ;;
+            *.7z)                           7z x "$1" ;;
+            *.lzo)                          lzop -d  "$1" ;;
+            *.gz)                           gunzip "$1" ;;
+            *.bz2)                          bunzip2 "$1" ;;
+            *.Z)                            uncompress "$1" ;;
+            *.xz|*.txz|*.lzma|*.tlz)        xz -d "$1" ;;
+            *) echo "Sorry, '$1' could not be decompressed." ;;
+        esac
+    fi
+}
