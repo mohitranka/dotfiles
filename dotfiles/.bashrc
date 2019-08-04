@@ -102,9 +102,11 @@ extract() {
 
 git_push() {
     cd $HOME/.dotfiles
-    git add .
-    git commit -am"[Automated commit] `date -u`"
-    git push origin master
+    if ! [[ `git status --porcelain` ]]; then
+        git add .
+        git commit -am"[Automated commit] `date -u`"
+        git push origin master
+    fi
 }
 
 trap git_push EXIT
