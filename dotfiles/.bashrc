@@ -99,3 +99,12 @@ extract() {
         esac
     fi
 }
+
+git_push() {
+    cd $HOME/.dotfiles
+    git add .
+    git commit -am"[Automated commit] `date -u`"
+    git push origin master
+}
+
+trap git_push EXIT
