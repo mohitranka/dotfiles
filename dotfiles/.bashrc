@@ -1,5 +1,4 @@
-# .bashrc
-
+# .bashrc 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -102,7 +101,7 @@ extract() {
 
 git_push() {
     cd $HOME/.dotfiles
-    if ! [[ `git status --porcelain` ]]; then
+    if [[ `git status --porcelain` ]]; then
         git add .
         git commit -am"[Automated commit] `date -u`"
         git push origin master
