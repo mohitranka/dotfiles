@@ -7,7 +7,7 @@ Dotfiles that make it easier to take your environment with you!
 ```
 git clone https://github.com/mohitranka/dotfiles.git
 cd dotfiles/
-./setup.sh
+./bin/setup.sh
 source $HOME/.bashrc
 ```
 
