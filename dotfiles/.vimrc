@@ -68,9 +68,12 @@ nnoremap fg <c-o>:wq<cr>
 inoremap gg <c-o>:qa<cr><ESC>`^
 nnoremap gg <c-o>:qa<cr>
 
+" Go to the end of the line
+nnoremap ll $
+
 " Ctrl-j/k inserts blank line below/above.
-nnoremap <silent><C-j> o <ESC>`^
-nnoremap <silent><C-k> O <ESC>`^
+nnoremap <silent><leader>j o <ESC>`^
+nnoremap <silent><leader>k O <ESC>`^
 
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
