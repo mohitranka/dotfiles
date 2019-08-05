@@ -18,3 +18,4 @@ alias arc='vim ~/.alias'
 # Go alias
 alias gof='gofmt -l -s -w .'
 alias gob='go build ./... && go build'
+alias make='make -B'
