@@ -99,7 +99,7 @@ extract() {
     fi
 }
 
-git_push() {
+git_push_dotfiles() {
     cd $HOME/.dotfiles
     if [[ `git status --porcelain` ]]; then
         git add .
@@ -108,4 +108,4 @@ git_push() {
     fi
 }
 
-trap git_push EXIT
+trap git_push_dotfiles EXIT
