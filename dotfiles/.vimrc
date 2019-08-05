@@ -69,8 +69,8 @@ inoremap<silent> gg <c-o>:qa<cr><ESC>`^
 nnoremap<silent> gg <c-o>:qa<cr>
 
 "quit and discard
-inoremap<silent> qq <c-o>:q!<cr><ESC>`^
-nnoremap<silent> qq <c-o>:q!<cr>
+inoremap<silent> 1q <c-o>:q!<cr><ESC>`^
+nnoremap<silent> 1q <c-o>:q!<cr>
 
 " Go to the end of the line
 nnoremap<silent> ll $
@@ -84,28 +84,16 @@ cmap w!! w !sudo tee > /dev/null %
  
 " Statusline
 
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
 set laststatus=2
 
 set statusline=
-set statusline+=%#PmenuSel#
-"set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
+set statusline+=%#CursorColumn#
 set statusline+=\ %f
 set statusline+=%m
+set statusline+=%r
 set statusline+=%=
-set statusline+=%#CursorColumn#
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
-set statusline+=\ %l:%c
-"set statusline+=\
+set statusline+=\ Line\ %l\ of\ %L:\ Column\ %c\  
