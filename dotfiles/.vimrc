@@ -58,22 +58,25 @@ inoremap jj <ESC>`^ " Come back to the normal mode
 
 "Write
 inoremap ff <c-o>:w<cr><ESC>`^
-nnoremap ff <c-o>:w<cr>
+nnoremap<silent> ff <c-o>:w<cr>
 
 "Write and quit
 inoremap fg <c-o>:wq<cr><ESC>`^
-nnoremap fg <c-o>:wq<cr>
+nnoremap<silent> fg <c-o>:wq<cr>
 
 "quit and ask
 inoremap gg <c-o>:qa<cr><ESC>`^
-nnoremap gg <c-o>:qa<cr>
+nnoremap<silent> gg <c-o>:qa<cr>
+
+"quit and discard
+inoremap qq <c-o>:q!<cr><ESC>`^
+nnoremap<silent> qq <c-o>:q!<cr>
 
 " Go to the end of the line
-nnoremap ll $
+nnoremap<silent> ll $
 
-" Ctrl-j/k inserts blank line below/above.
-nnoremap <silent><leader>j o <ESC>`^
-nnoremap <silent><leader>k O <ESC>`^
+" Ctrl-j/k inserts blank line below.
+nnoremap <silent><S-o> o <ESC>`^
 
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
