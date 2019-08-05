@@ -64,11 +64,11 @@ install_z_if_required() {
 
 backup_old_rcs() {
     echo -e "\u001b[33;1mBacking up old files...\u001b[0m";
-    test -h ~/.bashrc && cp ~/.bashrc ~/.bashrc.old && rm ~/.bashrc 
-    test -h ~/.alias && cp ~/.alias ~/.alias.old && rm ~/.alias 
-    test -h ~/.tmux.conf && cp ~/.tmux.conf ~/.tmux.conf.old && rm ~/.tmux.conf 
-    test -h ~/.gitconfig && cp ~/.gitconfig ~/.gitconfig.old && rm ~/.gitconfig 
-    test -h ~/.vimrc && cp ~/.vimrc ~/.vimrc.old && rm ~/.vimrc 
+    test -e ~/.bashrc && cp ~/.bashrc ~/.bashrc.old && rm ~/.bashrc 
+    test -e ~/.alias && cp ~/.alias ~/.alias.old && rm ~/.alias 
+    test -e ~/.tmux.conf && cp ~/.tmux.conf ~/.tmux.conf.old && rm ~/.tmux.conf 
+    test -e ~/.gitconfig && cp ~/.gitconfig ~/.gitconfig.old && rm ~/.gitconfig 
+    test -e ~/.vimrc && cp ~/.vimrc ~/.vimrc.old && rm ~/.vimrc 
     return 0
 }
 
