@@ -100,7 +100,11 @@ extract() {
 }
 
 git_push_dotfiles() {
-    cd $HOME/.dotfiles
+    git_automated_push ~/.dotfiles
+}
+
+git_automated_push() {
+    cd $1
     if [[ `git status --porcelain` ]]; then
         git add .
         git commit -am"[Automated commit] `date -u`"
