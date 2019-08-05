@@ -28,8 +28,8 @@ if $TERM_PROGRAM =~ "iTerm"
 endif
 set rtp+=/usr/local/opt/fzf
 
-nmap <leader>l ;set list!<CR>
-nmap <silent> <leader>/ ;nohlsearch<CR>
+nmap<silent> <leader>l ;set list!<CR>
+nmap<silent> <leader>/ ;nohlsearch<CR>
 
 nno : ;
 nno ; :
@@ -39,44 +39,45 @@ vno ; :
 " Make sure the arrow keys behave properly
 " in insert mode.
 
-inoremap <Esc>A <up>
-inoremap <Esc>B <down>
-inoremap <Esc>C <right>
-inoremap <Esc>D <left>
+inoremap<silent> <Esc>A <up>
+inoremap<silent> <Esc>B <down>
+inoremap<silent> <Esc>C <right>
+inoremap<silent> <Esc>D <left>
 
 " disable arrow keys in normal mode
 
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+noremap<silent> <Up> <NOP>
+noremap<silent> <Down> <NOP>
+noremap<silent> <Left> <NOP>
+noremap<silent> <Right> <NOP>
 
 " Disable Esc key in insert mode
-inoremap <ESC> <NOP>
+inoremap<silent> <ESC> <NOP>
 " `jj` is used as Esc key in insert mode 
-inoremap jj <ESC>`^ " Come back to the normal mode
+inoremap<silent> jj <ESC>`^ " Come back to the normal mode
 
 "Write
-inoremap ff <c-o>:w<cr><ESC>`^
+inoremap<silent> ff <c-o>:w<cr><ESC>`^
 nnoremap<silent> ff <c-o>:w<cr>
 
 "Write and quit
-inoremap fg <c-o>:wq<cr><ESC>`^
+inoremap<silent> fg <c-o>:wq<cr><ESC>`^
 nnoremap<silent> fg <c-o>:wq<cr>
 
 "quit and ask
-inoremap gg <c-o>:qa<cr><ESC>`^
+inoremap<silent> gg <c-o>:qa<cr><ESC>`^
 nnoremap<silent> gg <c-o>:qa<cr>
 
 "quit and discard
-inoremap qq <c-o>:q!<cr><ESC>`^
+inoremap<silent> qq <c-o>:q!<cr><ESC>`^
 nnoremap<silent> qq <c-o>:q!<cr>
 
 " Go to the end of the line
 nnoremap<silent> ll $
 
-" Ctrl-j/k inserts blank line below.
-nnoremap <silent><S-o> o <ESC>`^
+" Ctrl-j/k inserts blank line below/above.
+nnoremap<silent><CR-o> o <ESC>`^
+nnoremap<silent><CR-O> O <ESC>`^
 
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
