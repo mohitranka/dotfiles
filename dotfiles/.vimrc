@@ -69,15 +69,15 @@ inoremap<silent> gg <c-o>:qa<cr><ESC>`^
 nnoremap<silent> gg <c-o>:qa<cr>
 
 "quit and discard
-inoremap<silent> 1q <c-o>:q!<cr><ESC>`^
-nnoremap<silent> 1q <c-o>:q!<cr>
+inoremap<silent> <leader>g <c-o>:q!<cr><ESC>`^
+nnoremap<silent> <leader>g <c-o>:q!<cr>
 
 " Go to the end of the line
 nnoremap<silent> ll $
 
 " Ctrl-j/k inserts blank line below/above.
-nnoremap<silent><CR-o> o <ESC>`^
-nnoremap<silent><CR-O> O <ESC>`^
+nnoremap<silent> <leader>o o <ESC>`^
+nnoremap<silent> <leader>0 O <ESC>`^
 
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
