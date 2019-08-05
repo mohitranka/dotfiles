@@ -104,11 +104,16 @@ git_push_dotfiles() {
 }
 
 git_automated_push() {
-    cd $1
-    if [[ `git status --porcelain` ]]; then
-        git add .
-        git commit -am"[Automated commit] `date -u`"
-        git push origin master
+    if (( "$#" < 1)); then
+        echo "git_automated_push requires git root directory as input";
+    else
+        git_root=$1;
+        cd $git_root;
+        if [[ `git status --porcelain` ]]; then
+            git add .
+            git commit -am"[Automated commit] `date -u`"
+            git push origin master
+        fi
     fi
 }
 
