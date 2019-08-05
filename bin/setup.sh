@@ -73,7 +73,7 @@ backup_old_rcs() {
 }
 
 symlink_new_rcs() {
-    PARENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+    PARENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && cd .. && pwd )"
     echo -e "\u001b[36;1mAdding symlinks...\u001b[0m"
     ln -sfnv $PARENT_DIR/dotfiles/.bashrc ~/.bashrc
     ln -sfnv $PARENT_DIR/dotfiles/.alias ~/.alias
