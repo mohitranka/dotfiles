@@ -97,3 +97,6 @@ set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ Line\ %l\ of\ %L:\ Column\ %c\  
+
+" Read aliases
+let $BASH_ENV = "~/.alias"

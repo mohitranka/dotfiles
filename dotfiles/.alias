@@ -1,5 +1,5 @@
 # General .alias file
-
+shopt -s expand_aliases
 # Sensible defaults
 alias ls='ls -FG'
 alias vi=vim
