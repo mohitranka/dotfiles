@@ -82,6 +82,10 @@ nnoremap<silent> <leader>0 O <ESC>`^
 " Open terminal in a buffer quickly
 nnoremap<silent> <leader>t :vnew<cr><c-o>:terminal ++curwin<cr>
 
+" Split buffers quickly
+nnoremap<silent> <leader><bar> :vsplit<cr>
+nnoremap<silent> <leader>- :split<cr>
+
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
  
