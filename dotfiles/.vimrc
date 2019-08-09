@@ -83,8 +83,13 @@ nnoremap<silent> <leader>0 O <ESC>`^
 nnoremap<silent> <leader>t :vnew<cr><c-o>:terminal ++curwin<cr>
 
 " Split buffers quickly
-nnoremap<silent> <leader><bar> :vsplit<cr>
-nnoremap<silent> <leader>- :split<cr>
+nnoremap<silent> <leader>v :vnew<cr>
+nnoremap<silent> <leader>h :new<cr>
+
+" Move between buffers quickly
+nnoremap<silent> <leader>n :gn<cr>
+nnoremap<silent> <leader>p :gp<cr>
+nnoremap<silent> <leader>d :gd<cr>
 
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
