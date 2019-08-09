@@ -75,9 +75,12 @@ nnoremap<silent> <leader>g <c-o>:q!<cr>
 " Go to the end of the line
 nnoremap<silent> ll $
 
-" Ctrl-j/k inserts blank line below/above.
+" inserts blank line below/above.
 nnoremap<silent> <leader>o o <ESC>`^
 nnoremap<silent> <leader>0 O <ESC>`^
+
+" Open terminal in a buffer quickly
+nnoremap<silent> <leader>t <Ctrl-w><v><c-o>:terminal ++curwin<cr>
 
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
