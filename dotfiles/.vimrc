@@ -83,8 +83,8 @@ nnoremap<silent> <leader>0 O <ESC>`^
 nnoremap<silent> <leader>t :vnew<cr><c-o>:terminal ++curwin<cr>
 
 " Split buffers quickly
-nnoremap<silent> <leader>v :vnew<cr>
-nnoremap<silent> <leader>h :new<cr>
+nnoremap<silent> <leader>\| :vnew<cr>
+nnoremap<silent> <leader>- :new<cr>
 
 " Move between buffers quickly
 nnoremap<silent> <tab> <c-w>w
