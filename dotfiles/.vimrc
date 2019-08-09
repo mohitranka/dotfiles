@@ -87,9 +87,9 @@ nnoremap<silent> <leader>v :vnew<cr>
 nnoremap<silent> <leader>h :new<cr>
 
 " Move between buffers quickly
-nnoremap<silent> <leader>n :gn<cr>
-nnoremap<silent> <leader>p :gp<cr>
-nnoremap<silent> <leader>d :gd<cr>
+nnoremap<silent> <leader>n :bn<cr>
+nnoremap<silent> <leader>p :bp<cr>
+nnoremap<silent> <leader>d :bd<cr>
 
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
