@@ -88,6 +88,7 @@ nnoremap<silent> <leader>- :new<cr>
 
 " Move between buffers quickly
 nnoremap<silent> <tab> <c-w>w
+nnoremap<silent> <leader>f <c-w><bar>
 
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
