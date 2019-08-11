@@ -45,6 +45,16 @@ if command -v brew >/dev/null 2>&1; then
 	[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
 fi
 
+# Add dotfiles bin to access notes etc.
+if [ -f "$HOME/.dotfiles/bin" ]; then
+   export PATH=$PATH:$HOME/.dotfiles/bin
+fi
+
+# Add go bin path, if available
+if command -v go > /dev/null 2>&1; then
+    export PATH=$PATH:`go env GOPATH`/bin
+fi
+
 export LC_ALL=en_US.UTF-8
 
 
@@ -69,6 +79,9 @@ shopt -s cmdhist
 # Ignore duplicates, ls without options and builtin commands
 HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:[bf]g:exit"
+
+## Notes with fzf
+export NOTES=$HOME/Dropbox/notes
 
 ## Extract any archieve
 
