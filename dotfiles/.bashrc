@@ -46,7 +46,7 @@ if command -v brew >/dev/null 2>&1; then
 fi
 
 # Add dotfiles bin to access notes etc.
-if [ -f "$HOME/.dotfiles/bin" ]; then
+if [ -d "$HOME/.dotfiles/bin" ]; then
    export PATH=$PATH:$HOME/.dotfiles/bin
 fi
 
