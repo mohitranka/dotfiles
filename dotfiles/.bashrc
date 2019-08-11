@@ -131,6 +131,3 @@ git_automated_push() {
 }
 
 trap git_push_dotfiles EXIT
-
-# added by travis gem
-[ -f /Users/mohit/.travis/travis.sh ] && source /Users/mohit/.travis/travis.sh
