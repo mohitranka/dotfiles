@@ -122,14 +122,20 @@ git_automated_push() {
     if (( "$#" < 1)); then
         echo "git_automated_push requires git root directory as input";
     else
-        git_root=$1;
-        cd $git_root;
-        if [[ `git status --porcelain` ]]; then
-            git add .
-            git commit -am"[Automated commit] `date -u`"
-            git push origin master
+        read -p "Push to changes to remote [yes|NO]? " response
+        if [ $response == "yes" ]; then
+            git_root=$1;
+            cd $git_root;
+            if [[ `git status --porcelain` ]]; then
+                git add .
+                git commit -am"[Automated commit] `date -u`"
+                git push origin master
+            fi
+        else
+            echo "Not pushing changes to remote";
+            sleep 2;
         fi
     fi
 }
 
-#trap git_push_dotfiles EXIT
+trap git_push_dotfiles EXIT
