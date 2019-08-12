@@ -20,3 +20,4 @@ alias mrc='vim ~/.muttrc'
 # Go alias
 alias gob='gofmt -l -s -w . && go build ./... && go build'
 alias make='make -B'
+alias q='EXIT=1 exit'
