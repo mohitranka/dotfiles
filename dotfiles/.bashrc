@@ -132,7 +132,7 @@ git_automated_push() {
             fi
         else
             echo "Not pushing changes to remote";
-            sleep 2;
+            sleep 0.5;
         fi
     fi
 }
