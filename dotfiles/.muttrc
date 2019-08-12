@@ -1,0 +1,20 @@
+set imap_user="mohitranka"
+set imap_pass="`pass mutt/gmail`"
+set smtp_url="smtp://mohitranka@smtp.gmail.com:587/"
+set smtp_pass="`pass mutt/gmail`"
+set from="mohitranka"
+set realname="Mohit Ranka"
+set folder="imaps://imap.gmail.com:993"
+set spoolfile="+INBOX"
+set postponed="+[Gmail]/Drafts"
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set move=no
+set smtp_authenticators=‘gssapi:login’
+set timeout=10
+
+# Macros
+macro index A \
+    "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
+    "mark all new as read"

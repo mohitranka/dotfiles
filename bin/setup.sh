@@ -69,6 +69,7 @@ backup_old_rcs() {
     test -e ~/.tmux.conf && cp ~/.tmux.conf ~/.tmux.conf.old && rm ~/.tmux.conf 
     test -e ~/.gitconfig && cp ~/.gitconfig ~/.gitconfig.old && rm ~/.gitconfig 
     test -e ~/.vimrc && cp ~/.vimrc ~/.vimrc.old && rm ~/.vimrc 
+    test -e ~/.muttrc && cp ~/.muttrc ~/.muttrc.old && rm ~/.muttrc 
     return 0
 }
 
@@ -80,6 +81,7 @@ symlink_new_rcs() {
     ln -sfnv $PARENT_DIR/dotfiles/.tmux.conf ~/.tmux.conf
     ln -sfnv $PARENT_DIR/dotfiles/.gitconfig ~/.gitconfig
     ln -sfnv $PARENT_DIR/dotfiles/.vimrc ~/.vimrc
+    ln -sfnv $PARENT_DIR/dotfiles/.muttrc ~/.muttrc
     return 0
 }
 
