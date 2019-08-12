@@ -15,6 +15,7 @@ alias brc='vim ~/.bashrc'
 alias vrc='vim ~/.vimrc'
 alias arc='vim ~/.alias'
 alias trc='vim ~/.tmux.conf'
+alias mrc='vim ~/.muttrc'
 
 # Go alias
 alias gob='gofmt -l -s -w . && go build ./... && go build'
