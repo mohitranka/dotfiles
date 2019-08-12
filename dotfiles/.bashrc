@@ -2,7 +2,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+  tmux attach || exec tmux new-session;
 fi
 # Source global definitions
 if [ -f /etc/bashrc ]; then
