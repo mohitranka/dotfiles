@@ -73,7 +73,7 @@ inoremap<silent> <leader>g <c-o>:q!<cr><ESC>`^
 nnoremap<silent> <leader>g <c-o>:q!<cr>
 
 " Go to the end of the line
-nnoremap<silent> ll $
+nnoremap<silent> ll $b
 
 " inserts blank line below/above.
 nnoremap<silent> <leader>o o <ESC>`^
