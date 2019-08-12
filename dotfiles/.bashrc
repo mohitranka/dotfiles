@@ -130,4 +130,4 @@ git_automated_push() {
     fi
 }
 
-trap git_push_dotfiles EXIT
+#trap git_push_dotfiles EXIT
