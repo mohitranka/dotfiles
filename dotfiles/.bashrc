@@ -122,8 +122,7 @@ git_automated_push() {
     if (( "$#" < 1)); then
         echo "git_automated_push requires git root directory as input";
     else
-        read -p "Push to changes to remote [yes|NO]? " response
-        if [ $response == "yes" ]; then
+        if [ "$SILENT_EXIT" != 1 ]; then
             git_root=$1;
             cd $git_root;
             if [[ `git status --porcelain` ]]; then
