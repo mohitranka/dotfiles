@@ -3,10 +3,10 @@ percent=`pmset -g batt | grep InternalBattery | awk ' { print $3 } ' | tr -d '%;
 
 symbol=""
 if [ "$percent" == 100 ]; then
-    symbol=🔋;
+    symbol="🔋";
 elif [ "$percent" > 60 ]; then
-    symbol=⚡;
+    symbol="⚡";
 else
-    symbol=🔌;
+    symbol="🔌";
 fi
-echo -n "$symbol $percent%";
+echo -n "$percent%";
