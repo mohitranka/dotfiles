@@ -13,6 +13,7 @@ fi
 if [ -f ~/.alias ]; then
 . ~/.alias
 fi
+
 export EDITOR=vim
 # User specific aliases and functions
 parse_git_branch() {
