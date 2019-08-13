@@ -8,7 +8,10 @@ alias ssh='if [ "$(ssh-add -l)" = "The agent has no identities." ]; then ssh-add
 alias v=vim
 alias t=todoist
 alias ta='todoist add'
-
+alias mail='mutt'
+alias email='mutt'
+alias music='mpsyt'
+alias g='git'
 # Helper shortcuts
 alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
 alias reload='source $HOME/.bashrc'
@@ -23,4 +26,5 @@ alias mrc='vim ~/.muttrc'
 # Go alias
 alias gob='gofmt -l -s -w . && go build ./... && go build'
 alias make='make -B'
-alias q='SILENT_EXIT=1 exit'
+alias q='SILENT_EXIT=1 builtin exit'
+alias e='SILENT_EXIT=1 builtin exit'
