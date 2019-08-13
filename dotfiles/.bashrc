@@ -59,7 +59,7 @@ if command -v go > /dev/null 2>&1; then
 fi
 
 export LC_ALL=en_US.UTF-8
-
+export LANG=en_US.UTF-8
 
 # color man page
 
