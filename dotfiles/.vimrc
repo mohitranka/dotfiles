@@ -57,20 +57,20 @@ inoremap<silent> <ESC> <NOP>
 inoremap<silent> jj <ESC>`^ " Come back to the normal mode
 
 "Write
-inoremap<silent> ff <c-o>:w<cr><ESC>`^
-nnoremap<silent> ff <c-o>:w<cr>
+inoremap<silent> ww <c-o>:w<cr><ESC>`^
+nnoremap<silent> ww <c-o>:w<cr>
 
 "Write and quit
-inoremap<silent> fg <c-o>:wq<cr><ESC>`^
-nnoremap<silent> fg <c-o>:wq<cr>
+inoremap<silent> wq <c-o>:wq<cr><ESC>`^
+nnoremap<silent> wq <c-o>:wq<cr>
 
 "quit and ask
-inoremap<silent> gg <c-o>:qa<cr><ESC>`^
-nnoremap<silent> gg <c-o>:qa<cr>
+inoremap<silent> qq <c-o>:qa<cr><ESC>`^
+nnoremap<silent> qq <c-o>:qa<cr>
 
 "quit and discard
-inoremap<silent> <leader>g <c-o>:q!<cr><ESC>`^
-nnoremap<silent> <leader>g <c-o>:q!<cr>
+inoremap<silent> <leader>q <c-o>:q!<cr><ESC>`^
+nnoremap<silent> <leader>q <c-o>:q!<cr>
 
 " Go to the end of the line
 nnoremap<silent> ll $b
