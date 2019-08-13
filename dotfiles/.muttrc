@@ -13,7 +13,7 @@ set certificate_file=~/.mutt/certificates
 set move=no
 set smtp_authenticators=‘gssapi:login’
 set timeout=10
-set 'index_format="%4C %Z %{%b %d} %-15.15L (%4l) %s"'
+set index_format="%{%b %d} %-15.15L (%4l) %s"
 # Macros
 macro index A \
     "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \

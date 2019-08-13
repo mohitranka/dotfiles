@@ -57,12 +57,12 @@ inoremap<silent> <ESC> <NOP>
 inoremap<silent> jj <ESC>`^ " Come back to the normal mode
 
 "Write
-inoremap<silent> ww <c-o>:w<cr><ESC>`^
-nnoremap<silent> ww <c-o>:w<cr>
+inoremap<silent> sss <c-o>:w<cr><ESC>`^
+nnoremap<silent> sss <c-o>:w<cr>
 
 "Write and quit
-inoremap<silent> wq <c-o>:wq<cr><ESC>`^
-nnoremap<silent> wq <c-o>:wq<cr>
+inoremap<silent> sq <c-o>:wq<cr><ESC>`^
+nnoremap<silent> sq <c-o>:wq<cr>
 
 "quit and ask
 inoremap<silent> qq <c-o>:qa<cr><ESC>`^
