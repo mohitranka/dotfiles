@@ -27,7 +27,8 @@ set editor = "vim"
 set sort=reverse-date
 set sort_aux=reverse-last-date-received
 set nomark_old
-
+set mailcap_path=~/.mutt/mailcap
+ 
 # Sidebar
 set sidebar_visible = yes
 set sidebar_width = 20
