@@ -74,6 +74,7 @@ alternative_order text/plain text/html
 # Macros  
 macro index G <last-entry> "Go to the last entry"
 macro index gg <first-entry> "Go to the first entry"
+macro index,pager \cb | urlview\n
 
 ## Gmail-style keyboard shortcuts
 macro index,pager am "<enter-command>unset trash\n <delete-message>" "Gmail archive message" # different from Gmail, but wanted to keep "y" to show folders.
