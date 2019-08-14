@@ -145,7 +145,7 @@ clean_current_song() {
 cleanup() {
     git_push_dotfiles;
     rm -rf 60;
-    rm -rf clean_current_song;
+    clean_current_song;
 }
 
 trap cleanup EXIT
