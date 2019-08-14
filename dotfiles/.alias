@@ -8,6 +8,8 @@ alias ssh='if [ "$(ssh-add -l)" = "The agent has no identities." ]; then ssh-add
 alias v=vim
 alias t=todoist
 alias ta='todoist add'
+alias tl='todoist list'
+alias tad='todoist add -d today '
 alias mail='neomutt'
 alias email='neomutt'
 alias neomutt='stty discard undef;/usr/local/bin/neomutt'

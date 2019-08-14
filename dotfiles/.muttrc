@@ -1,3 +1,4 @@
+# Generic
 set imap_user="mohitranka"
 set imap_pass="`pass mutt/gmail`"
 set smtp_url="smtp://mohitranka@smtp.gmail.com:587/"
@@ -19,24 +20,24 @@ set certificate_file=~/.mutt/certificates
 set move=no
 set smtp_authenticators=‘gssapi:login’
 set timeout=10
-set index_format="%<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%d-%m-%y ]> %-15.15L %s"
- 
+set index_format="[%C] %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%d-%m-%y ]> %S %-15.15L %s" 
 set sleep_time=0
 set beep=no
 set editor = "vim"
 set sort=reverse-date
 set sort_aux=reverse-last-date-received
+set nomark_old
 
 # Sidebar
 set sidebar_visible = yes
 set sidebar_width = 20
 set sidebar_short_path = no
 set sidebar_component_depth = 0
-set sidebar_on_right = no
 set mail_check_stats
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
 mailboxes +INBOX
 
+# Bindings
 bind index,pager \Cp sidebar-prev
 bind index,pager \Cn sidebar-next
 bind index,pager \Co sidebar-open
@@ -46,6 +47,11 @@ bind index,pager <F5> sidebar-prev-new
 bind index,pager <F6> sidebar-next-new
 bind index,pager B sidebar-toggle-visible
 
+## Needed for Gmail shortcuts
+bind index,pager a noop
+bind index,pager g noop
+
+# Autoview
 auto_view application/zip
 auto_view application/x-gzip
 auto_view application/x-gunzip
@@ -61,32 +67,24 @@ auto_view text/html
 auto_view text/x-vcard
 auto_view image/tiff
 
+# Alternative Orders
 alternative_order text/enriched text/plain text
-# --------------------------------------------------------------------------
-# COLORS – some unpleasant examples are given
-# --------------------------------------------------------------------------
-color indicator cyan black
-color sidebar_highlight black yellow
-color sidebar_divider white black
-color sidebar_flagged red black
-color sidebar_new green black
-color sidebar_ordinary red default
-# --------------------------------------------------------------------------
-# Macros
-macro index A \
-    "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
-    "Mark all new as read"
-
+ 
+# Macros  
 macro index G <last-entry> "Go to the last entry"
-macro index g <first-entry> "Go to the first entry"
-# # Gmail-style keyboard shortcuts
+macro index gg <first-entry> "Go to the first entry"
+
+## Gmail-style keyboard shortcuts
 macro index,pager am "<enter-command>unset trash\n <delete-message>" "Gmail archive message" # different from Gmail, but wanted to keep "y" to show folders.
-macro index,pager d "<enter-command>set trash=\"imaps://imap.googlemail.com/[GMail]/Bin\"\n <delete-message>" "Gmail delete message"
 macro index,pager gi "<change-folder>=INBOX<enter><first-entry>" "Go to inbox"
 macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter><first-entry>" "Go to all mail"
 macro index,pager gs "<change-folder>=[Gmail]/Starred<enter><first-entry>" "Go to starred messages"
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter><first-entry>" "Go to drafts"
+
+# Style
+color index      brightwhite    default ~U
+
 # Setup
 exec first-entry
 
-# vim: syntax=neomuttrc
+#vim: syntax=neomuttrc
