@@ -69,8 +69,8 @@ auto_view text/x-vcard
 auto_view image/tiff
 
 # Alternative Orders
-alternative_order text/enriched text/plain text
- 
+alternative_order text/plain text/html
+
 # Macros  
 macro index G <last-entry> "Go to the last entry"
 macro index gg <first-entry> "Go to the first entry"
