@@ -57,8 +57,8 @@ inoremap<silent> <ESC> <NOP>
 inoremap<silent> jj <ESC>`^ " Come back to the normal mode
 
 "Write
-inoremap<silent> sss <c-o>:w<cr><ESC>`^
-nnoremap<silent> sss <c-o>:w<cr>
+inoremap<silent> zz <c-o>:w<cr><ESC>`^
+nnoremap<silent> zz <c-o>:w<cr>
 
 "Write and quit
 inoremap<silent> sq <c-o>:wq<cr><ESC>`^
