@@ -87,10 +87,9 @@ symlink_new_rcs() {
 
 copy_binaries() {
     BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/bin" >/dev/null 2>&1 && pwd )"
-    for filepath in $BIN_DIR/*; do
-        filename=basename $filepath;
-        echo "Copying file: $filepath to /usr/local/bin/$filename"; 
-        cp $filepath /usr/local/bin/$filename;
+    for path in $BIN_DIR/*; do
+        name=basename $path;
+        cp $path /usr/local/bin/$name;
     done
 }
 
