@@ -1,5 +1,4 @@
-# .bashrc 
-# If not running interactively, don't do anything
+# .bashrc # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   tmux attach || exec tmux new-session;
@@ -116,7 +115,7 @@ extract() {
 }
 
 git_push_dotfiles() {
-    git_automated_push ~/.dotfiles
+    [ -d "$HOME/.dotfiles" ] && git_automated_push $HOME/.dotfiles
 }
 
 git_automated_push() {
