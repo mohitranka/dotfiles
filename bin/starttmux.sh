@@ -5,11 +5,22 @@
 # create a new tmux session or attach tmux window
 [ -z "$TMUX" ] && ( tmux attach || tmux new-session )
 
-# Split pane 1 horizontal by 65%, start redis-server
-tmux splitw -h -p 20
-tmux send-keys "music" C-m 
-
-# Select pane 2 
+# Window 1 - Orientation
+tmux splitw -h -p 70
 tmux selectp -t 2
-# Split pane 2 vertiacally by 25%
-tmux splitw -v -p 75
+tmux splitw -v -p 30 
+
+# Window 1: Music
+tmux selectp -t 1
+tmux send-keys "music" C-m
+tmux send-keys "open 1" C-m
+tmux send-keys "all shuffle repeat" C-m
+
+# Window 1: Email
+tmux selectp -t 2
+#tmux send-keys "email" C-m
+tmux send-keys "ls" C-m
+
+# Window 1: Notes
+tmux selectp -t 3
+tmux-send-keys "notes" C-m
