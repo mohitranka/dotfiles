@@ -74,7 +74,7 @@ backup_old_rcs() {
 }
 
 symlink_new_rcs() {
-    PARENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && cd .. && pwd )"
+    PARENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
     echo -e "\u001b[36;1mAdding symlinks...\u001b[0m"
     ln -sfnv $PARENT_DIR/dotfiles/.bashrc ~/.bashrc
     ln -sfnv $PARENT_DIR/dotfiles/.alias ~/.alias
@@ -85,10 +85,20 @@ symlink_new_rcs() {
     return 0
 }
 
+copy_binaries() {
+    BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/bin" >/dev/null 2>&1 && pwd )"
+    for filepath in $BIN_DIR/*; do
+        filename=basename $filepath;
+        echo "Copying file: $filepath to /usr/local/bin/$filename"; 
+        cp $filepath /usr/local/bin/$filename;
+    done
+}
+
 install_ripgrep_if_required
 install_fzf_if_required
 install_z_if_required
 backup_old_rcs
 symlink_new_rcs
+copy_binaries
 
 echo -e "\u001b[36;1mPlease execute 'source $HOME/.bashrc' for changes to take effect.\u001b[0m"
