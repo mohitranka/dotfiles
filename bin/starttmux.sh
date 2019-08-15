@@ -27,11 +27,5 @@ tmux splitw -v -p 75
 # Select pane 1
 tmux selectp -t 1
 
-# create a new window called scratch
-tmux new-window -t $session:1 -n scratch
-
-# return to main vim window
-tmux select-window -t $session:0
-
 # Finished setup, attach to the tmux session!
 tmux attach-session -t $session
