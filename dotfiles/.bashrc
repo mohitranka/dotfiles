@@ -47,11 +47,6 @@ if command -v brew >/dev/null 2>&1; then
 	[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
 fi
 
-# Add dotfiles bin to access notes etc.
-if [ -d "$HOME/.dotfiles/bin" ]; then
-   export PATH=$PATH:$HOME/.dotfiles/bin
-fi
-
 # Add go bin path, if available
 if command -v go > /dev/null 2>&1; then
     export PATH=$PATH:`go env GOPATH`/bin
