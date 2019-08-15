@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # set up tmux
-[-z "$TMUX"] && tmux start-server
+[ -z "$TMUX" ] && tmux start-server
 
 # create a new tmux session or attach tmux window
-tmux attach || tmux new-session
+[ -z "$TMUX" ] && ( tmux attach || tmux new-session )
 
 # Split pane 1 horizontal by 65%, start redis-server
 tmux splitw -h -p 20
