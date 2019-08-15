@@ -13,8 +13,8 @@ tmux splitw -v -p 30
 # Window 1: Music
 tmux selectp -t 1
 tmux send-keys "music" C-m
-tmux send-keys "open 1" C-m
-tmux send-keys "all shuffle repeat" C-m
+#tmux send-keys "open 1" C-m
+#tmux send-keys "all shuffle repeat" C-m
 
 # Window 1: Email
 tmux selectp -t 2
