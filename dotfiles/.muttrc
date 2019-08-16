@@ -28,7 +28,8 @@ set sort=reverse-date
 set sort_aux=reverse-last-date-received
 set nomark_old
 set mailcap_path=~/.mutt/mailcap
- 
+folder-hook . 'set read_inc=1000'
+
 # Sidebar
 set sidebar_width = 20
 set sidebar_short_path = no
