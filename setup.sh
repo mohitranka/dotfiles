@@ -89,7 +89,8 @@ copy_binaries() {
     BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/bin" >/dev/null 2>&1 && pwd )"
     for path in $BIN_DIR/*; do
         name=`basename $path`;
-        cp $path /usr/local/bin/$name;
+        mkdir -p $HOME/bin
+        cp $path $HOME/bin/$name;
     done
 }
 

@@ -52,6 +52,12 @@ if command -v go > /dev/null 2>&1; then
     export PATH=$PATH:`go env GOPATH`/bin
 fi
 
+# Add $HOME/bin to $PATH if does not exists
+
+if ! [[ ":$PATH:" == *"$HOME/bin"* ]]; then
+    export PATH=$PATH:$HOME/bin
+fi
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
