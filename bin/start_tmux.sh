@@ -33,6 +33,10 @@ tmux selectw -t 1
 tmux selectp -t 3
 tmux send-keys "watch todoist list" C-m
 
+# Select panel 1 on window 1
+tmux selectw -t 1
+tmux selectp -t 1
+
 # Go to window 2
 
 tmux selectw -t 2
