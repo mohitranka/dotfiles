@@ -10,9 +10,8 @@ alias t=todoist
 alias ta='todoist add'
 alias tl='todoist list'
 alias tad='todoist add -d today '
-alias mail='neomutt'
-alias email='neomutt'
-alias neomutt='stty discard undef;/usr/local/bin/neomutt'
+alias mail='stty discard undef;neomutt'
+alias email='stty discard undef;neomutt'
 alias music='mpsyt'
 alias g='git'
 # Helper shortcuts

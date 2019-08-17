@@ -62,6 +62,32 @@ install_z_if_required() {
     return 0
 }
 
+install_neomutt_if_required() {
+    if ! command -v neomutt >/dev/null 2>&1; then
+
+        echo -e "\u001b[36;1mInstalling neomutt...\u001b[0m"
+        if command -v apt-get >/dev/null 2>&1; then
+            sudo apt-get install neomutt -y
+            mkdir -p $HOME/.mutt/cache
+        elif command -v brew >/dev/null 2>&1; then
+            brew install neomutt/homebrew-neomutt/neomutt
+            mkdir -p $HOME/.mutt/cache
+        elif command -v yum >/dev/null 2>&1; then
+            if ! command -v yum-config-manager >/dev/null 2>&1; then
+                sudo yum install -y yum-utils 
+            fi
+            sudo yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/epel-7/flatcap-neomutt-epel-7.repo
+            sudo yum install -y neomutt
+            mkdir -p $HOME/.mutt/cache
+        else
+            echo -e "\u001b[33;1m Cannot install neomutt\u001b[0m"
+        fi
+    else
+        echo -e "\u001b[36;1mneomutt is already installed\u001b[0m"
+    fi
+    return 0
+}
+
 backup_old_rcs() {
     echo -e "\u001b[33;1mBacking up old files...\u001b[0m";
     test -e ~/.bashrc && cp ~/.bashrc ~/.bashrc.old && rm ~/.bashrc 
@@ -97,6 +123,7 @@ copy_binaries() {
 install_ripgrep_if_required
 install_fzf_if_required
 install_z_if_required
+install_neomutt_if_required
 backup_old_rcs
 symlink_new_rcs
 copy_binaries
