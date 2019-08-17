@@ -30,7 +30,7 @@ set mailcap_path=~/.mutt/mailcap
 folder-hook . 'set read_inc=1000'
 
 # Sidebar
-set sidebar_width = 20
+set sidebar_width = 25
 set sidebar_short_path = no
 set sidebar_component_depth = 0
 set mail_check_stats
@@ -50,6 +50,7 @@ bind index,pager B sidebar-toggle-visible
 ## Needed for Gmail shortcuts
 bind index,pager a noop
 bind index,pager g noop
+bind  index,pager s  flag-message            #Star a message
 
 # Autoview
 auto_view application/zip
@@ -78,10 +79,14 @@ macro index,pager \cb | urlview\n
 ## Gmail-style keyboard shortcuts
 macro index,pager am "<enter-command>unset trash\n <delete-message>" "Gmail archive message" # different from Gmail, but wanted to keep "y" to show folders.
 macro index,pager gi "<change-folder>=INBOX<enter><first-entry>" "Go to inbox"
-macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter><first-entry>" "Go to all mail"
+macro index,pager ga "<change-folder>=[Gmail]/All%20Mail<enter><first-entry>" "Go to all mail"
 macro index,pager gs "<change-folder>=[Gmail]/Starred<enter><first-entry>" "Go to starred messages"
+macro index,pager gr "<change-folder>=[Gmail]/Sent%20Mail<enter><first-entry>" "Go to sent messages"
+macro index,pager g! "<change-folder>=[Gmail]/Spam<enter><first-entry>" "Go to spam messages"
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter><first-entry>" "Go to drafts"
 
+macro index,pager !  "<save-message>=[Gmail]/Spam<enter><enter>" "Report spam"
+ 
 # Style
 color index      brightwhite    default ~U
 
