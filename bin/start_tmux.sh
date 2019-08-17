@@ -31,7 +31,7 @@ tmux send-keys "email" C-m
 # Window 1: Notes
 tmux selectw -t 1
 tmux selectp -t 3
-tmux send-keys "notes" C-m
+tmux send-keys "watch todoist list" C-m
 
 # Go to window 2
 
