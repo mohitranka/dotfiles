@@ -84,11 +84,13 @@ nnoremap<silent> <leader>t :vnew<cr><c-o>:terminal ++curwin<cr>
 
 " Split buffers quickly
 nnoremap<silent> <leader>\| :vnew<cr>
-nnoremap<silent> <leader>- :new<cr>
+nnoremap<silent> <leader>_ :new<cr>
 
-" Move between buffers quickly
+" buffer shortcuts
 nnoremap<silent> <tab> <c-w>w
 nnoremap<silent> <leader>f <c-w><bar>
+nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
@@ -111,3 +113,10 @@ set statusline+=\ Line\ %l\ of\ %L:\ Column\ %c\
 
 " Read aliases
 let $BASH_ENV = "~/.alias"
+
+" Background highlight
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
