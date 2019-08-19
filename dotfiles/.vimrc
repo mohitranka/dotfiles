@@ -61,7 +61,7 @@ inoremap<silent> zz <c-o>:w<cr><ESC>`^
 nnoremap<silent> zz <c-o>:w<cr>
 
 "Write and quit
-inoremap<silent> sq <c-o>:wq<cr><ESC>`^
+"inoremap<silent> sq <c-o>:wq<cr><ESC>`^
 nnoremap<silent> sq <c-o>:wq<cr>
 
 "quit and ask
