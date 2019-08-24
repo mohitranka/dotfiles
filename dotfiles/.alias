@@ -14,8 +14,8 @@ alias mail='stty discard undef;neomutt'
 alias email='stty discard undef;neomutt'
 alias music='mpsyt'
 alias g='git'
-# Helper shortcuts
 alias reload='source $HOME/.bashrc'
+alias tk='tmux kill-session'
 
 # Quick edit dotfiles
 alias brc='vim ~/.bashrc'
