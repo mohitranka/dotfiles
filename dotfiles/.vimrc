@@ -1,4 +1,4 @@
-set nocompatible
+set nocompatible 
 scriptencoding utf-8
 set encoding=utf-8
 
@@ -138,9 +138,29 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 let g:go_addtags_transform = "snakecase"
 
+" Use deoplete.
+if has('nvim')
+    let g:deoplete#auto_complete_start_length = 1
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_smart_case = 1
+    set completeopt-=preview
+
+
+    " Plugin key-mappings.
+    imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <silent><C-k>     <Plug>(neosnippet_expand_target)
+
+    imap <expr><TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ neosnippet#expandable_or_jumpable() ?
+    \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+endif 
+
 " Load all plugins now.
-" Plugins need to be added to runtimepath before helptags can be generated.
 packloadall
 " Load all of the helptags now, after plugins have been loaded.
-" All messages and errors will be ignored.
 silent! helptags ALL
