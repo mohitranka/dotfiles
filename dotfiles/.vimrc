@@ -145,18 +145,13 @@ if has('nvim')
     let g:deoplete#enable_smart_case = 1
     set completeopt-=preview
 
+    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-    " Plugin key-mappings.
-    imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <silent><C-k>     <Plug>(neosnippet_expand_target)
-
-    imap <expr><TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ neosnippet#expandable_or_jumpable() ?
-    \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    " If you want :UltiSnipsEdit to split your window.
+    let g:UltiSnipsEditSplit="vertical"
 
 endif 
 
