@@ -28,7 +28,7 @@ alias make='make -B'
 alias q='SILENT_EXIT=1 builtin exit'
 alias e='SILENT_EXIT=1 builtin exit'
 
-if command -v nvim > /dev/null 2&>1; then
+if command -v nvim > /dev/null 2>&1; then
     alias vim=nvim
     alias vi=nvim
     alias v=nvim
