@@ -2,9 +2,6 @@
 shopt -s expand_aliases
 # Sensible defaults
 alias ls='ls -FG'
-alias vim=nvim
-alias vi=nvim
-alias v=nvim
 alias grep='grep --color'
 alias ssh='if [ "$(ssh-add -l)" = "The agent has no identities." ]; then ssh-add; fi; /usr/bin/ssh "$@"'
 alias t=todoist
@@ -30,3 +27,12 @@ alias gob='gofmt -l -s -w . && go build ./... && go build'
 alias make='make -B'
 alias q='SILENT_EXIT=1 builtin exit'
 alias e='SILENT_EXIT=1 builtin exit'
+
+if command -v nvim > /dev/null 2&>1; then
+    alias vim=nvim
+    alias vi=nvim
+    alias v=nvim
+else
+    alias vi=vim
+    alias v=vim
+fi
