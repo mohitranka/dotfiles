@@ -82,7 +82,7 @@ export HISTIGNORE="&:ls:[bf]g:exit"
 
 ## Notes with fzf
 export NOTES=$HOME/Dropbox/notes
-
+export GO111MODULE=on
 ## Extract any archieve
 
 extract() {
