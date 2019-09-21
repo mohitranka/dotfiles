@@ -1,8 +1,8 @@
 # .bashrc # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#  tmux attach || exec tmux new-session;
-#fi
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  tmux attach || exec tmux new-session;
+fi
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 . /etc/bashrc
@@ -18,7 +18,7 @@ export EDITOR=vim
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-PROMPT_COMMAND='PS1_PATH=$(sed "s:\([^/\.]\)[^/]*/:\1/:g" <<< ${PWD/#$HOME/\~})'
+#PROMPT_COMMAND='PS1_PATH=$(sed "s:\([^/\.]\)[^/]*/:\1/:g" <<< ${PWD/#$HOME/\~})'
 #export PS1="\[\e[0;32m \$PS1_PATH\$(parse_git_branch)\e[m $ "
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
