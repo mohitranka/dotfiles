@@ -145,3 +145,5 @@ cleanup() {
 }
 
 trap cleanup EXIT
+
+export -f parse_git_branch
