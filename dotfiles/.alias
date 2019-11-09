@@ -36,3 +36,5 @@ else
     alias vi=vim
     alias v=vim
 fi
+
+alias k=kubectl
