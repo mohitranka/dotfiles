@@ -1,7 +1,7 @@
 # General .alias file
 shopt -s expand_aliases
 # Sensible defaults
-[[ -r "~/.bash_completion.d/complete_alias" ]] && source ~/.bash_completion.d/complete_alias
+source ~/.bash_completion.d/complete_alias
 alias ls='ls -FG'
 alias grep='grep --color'
 alias ssh='if [ "$(ssh-add -l)" = "The agent has no identities." ]; then ssh-add; fi; /usr/bin/ssh "$@"'
