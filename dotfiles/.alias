@@ -38,4 +38,5 @@ else
 fi
 
 alias k='kubectl'
+[[ -r "~/.bash_completion.d/complete_alias" ]] && . "~/.bash_completion.d/complete_alias"
 complete -F _complete_alias k

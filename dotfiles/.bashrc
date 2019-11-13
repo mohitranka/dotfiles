@@ -10,7 +10,6 @@ fi
 
 # Source aliases
 if [ -f ~/.alias ]; then
-[[ -r "~/.bash_completion.d/complete_alias" ]] && . "~/.bash_completion.d/complete_alias"
 . ~/.alias
 fi
 
