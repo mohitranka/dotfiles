@@ -37,4 +37,4 @@ else
     alias v=vim
 fi
 
-alias k=kubectl
+alias k='kubectl'
