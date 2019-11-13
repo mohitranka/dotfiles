@@ -27,6 +27,8 @@ export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 
 [[ -r "/usr/local/bin/z.sh" ]] && . "/usr/local/bin/z.sh" 
 
+[[ -r "~/.bash_completion.d/complete_alias" ]] && . "~/.bash_completion.d/complete_alias"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/mohit/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/mohit/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
