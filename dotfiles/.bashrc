@@ -147,15 +147,3 @@ cleanup() {
 trap cleanup EXIT
 
 export -f parse_git_branch
-
-
-prompt_shelby_load() {
-if [ $? != 0 ]; then
-    local prompt_symbol="\[\e[0;31m\]❯\[\e[0m\]"
-  else
-    local prompt_symbol="\[\e[0;32m\]❯\[\e[0m\]"
-  fi
-
-  PS1="$(~/.local/bin/shelby)\n${prompt_symbol} " 
-}
-PROMPT_COMMAND=prompt_shelby_load
