@@ -83,6 +83,7 @@ export HISTIGNORE="&:ls:[bf]g:exit"
 ## Notes with fzf
 export NOTES=$HOME/Dropbox/notes
 export GO111MODULE=on
+export CATALINA_HOME=/usr/local/bin/apache-tomcat-8.5.53
 ## Extract any archieve
 
 extract() {
